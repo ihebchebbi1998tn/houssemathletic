@@ -1,0 +1,175 @@
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { ChevronRight, Instagram, Phone, Dumbbell, Target, Clock } from 'lucide-react';
+import ParticleBackground from '../components/ParticleBackground';
+import Gallery from '../components/Gallery';
+import ImageCarousel from '../components/ImageCarousel';
+import FloatingWhatsApp from '../components/FloatingWhatsApp';
+
+export default function LandingPage() {
+  const navigate = useNavigate();
+
+  return (
+    <div className="relative min-h-screen overflow-x-hidden">
+      <ParticleBackground />
+      <FloatingWhatsApp />
+      
+      <div className="relative z-10">
+        <div className="container mx-auto px-4 py-8">
+          <motion.nav 
+            initial={{ y: -20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            className="flex justify-between items-center mb-16"
+          >
+            <div className="flex items-center gap-4">
+              <img
+                src="https://i.ibb.co/QJW86KW/logo.png"
+                alt="HJ Coaching"
+                className="h-24 w-auto"
+              />
+            </div>
+            <div className="flex gap-6">
+              <motion.a 
+                href="https://instagram.com" 
+                className="text-white hover:text-[#ffd700] transition-colors"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <Instagram size={24} />
+              </motion.a>
+              <motion.a 
+                href="tel:+21600000000" 
+                className="text-white hover:text-[#ffd700] transition-colors"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <Phone size={24} />
+              </motion.a>
+            </div>
+          </motion.nav>
+
+          <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-16 py-12">
+            <motion.div 
+              initial={{ x: -50, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ delay: 0.2 }}
+              className="flex-1 text-center lg:text-left"
+            >
+              <motion.h1 
+                className="text-5xl lg:text-7xl font-bold text-white mb-8 leading-tight"
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: { opacity: 1, y: 0 }
+                }}
+                initial="hidden"
+                animate="visible"
+                transition={{ duration: 0.5, delay: 0.3 }}
+              >
+                Transformez<br />
+                Votre <span className="text-[#ffd700]">Corps</span><br />
+                Votre <span className="text-[#ffd700]">Vie</span>
+              </motion.h1>
+              <motion.p 
+                className="text-gray-300 text-xl mb-12 leading-relaxed"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 }}
+              >
+                Découvrez votre meilleure version avec des programmes<br />
+                personnalisés et un suivi professionnel.
+              </motion.p>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => navigate('/inscription')}
+                className="bg-gradient-to-r from-[#ffd700] to-[#ffed4a] text-black px-10 py-5 
+                         rounded-full font-bold text-lg shadow-lg hover:shadow-xl 
+                         transition-all duration-300 flex items-center gap-3 mx-auto lg:mx-0
+                         transform hover:-translate-y-1"
+              >
+                Commencer Maintenant
+                <ChevronRight className="animate-bounce" />
+              </motion.button>
+            </motion.div>
+            
+            <motion.div 
+              initial={{ x: 50, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ delay: 0.4 }}
+              className="flex-1 relative hidden lg:block"
+            >
+              <div className="relative w-[400px] mx-auto">
+                <div className="absolute inset-0 bg-[#ffd700] blur-3xl opacity-20 -z-10" />
+                <img
+                  src="https://scontent.ftun1-2.fna.fbcdn.net/v/t39.30808-6/467372663_9385998904763284_6882433361222578566_n.jpg"
+                  alt="Houssem Jlassi"
+                  className="rounded-3xl shadow-2xl w-full relative z-10"
+                />
+              </div>
+            </motion.div>
+
+            <div className="lg:hidden w-full">
+              <ImageCarousel />
+            </div>
+          </div>
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.6 }}
+          className="py-20 bg-black/30 backdrop-blur-lg"
+        >
+          <div className="container mx-auto px-4">
+            <h2 className="text-4xl font-bold text-center text-white mb-16">
+              Transformations <span className="text-[#ffd700]">Inspirantes</span>
+            </h2>
+            <Gallery />
+          </div>
+        </motion.div>
+
+        <div className="container mx-auto px-4 py-20">
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: <Dumbbell className="w-8 h-8" />,
+                title: "Programmes Sur Mesure",
+                description: "Adaptés à vos objectifs et votre mode de vie"
+              },
+              {
+                icon: <Target className="w-8 h-8" />,
+                title: "Objectifs Atteints",
+                description: "Une méthode éprouvée pour des résultats garantis"
+              },
+              {
+                icon: <Clock className="w-8 h-8" />,
+                title: "Suivi Constant",
+                description: "Un accompagnement personnalisé pour votre réussite"
+              }
+            ].map((feature, index) => (
+              <motion.div
+                key={index}
+                initial={{ y: 50, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.2 * index }}
+                whileHover={{ y: -10 }}
+                className="bg-gradient-to-b from-[#242424]/80 to-[#1a1a1a]/80 backdrop-blur-lg p-8 rounded-2xl
+                         border border-[#ffd700]/10 hover:border-[#ffd700]/30 transition-all duration-300
+                         shadow-lg hover:shadow-xl"
+              >
+                <div className="w-16 h-16 bg-gradient-to-br from-[#ffd700]/20 to-[#ffd700]/10 
+                             rounded-xl flex items-center justify-center text-[#ffd700] mb-6
+                             transform rotate-3 hover:rotate-6 transition-transform duration-300">
+                  {feature.icon}
+                </div>
+                <h3 className="text-[#ffd700] text-xl font-bold mb-4">{feature.title}</h3>
+                <p className="text-gray-300">{feature.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
