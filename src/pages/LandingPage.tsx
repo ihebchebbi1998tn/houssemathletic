@@ -102,7 +102,7 @@ export default function LandingPage() {
               <div className="relative w-[400px] mx-auto">
                 <div className="absolute inset-0 bg-[#ffd700] blur-3xl opacity-20 -z-10" />
                 <img
-                  src="https://scontent.ftun1-2.fna.fbcdn.net/v/t39.30808-6/467372663_9385998904763284_6882433361222578566_n.jpg"
+                  src="https://i.ibb.co/r0r05g9/467859190-18284965684243085-4639842183437437601-n.jpg"
                   alt="Houssem Jlassi"
                   className="rounded-3xl shadow-2xl w-full relative z-10"
                 />

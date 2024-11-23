@@ -4,9 +4,9 @@ import { useEffect, useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const images = [
-  "https://scontent.ftun1-2.fna.fbcdn.net/v/t39.30808-6/467372663_9385998904763284_6882433361222578566_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=G5Y5hlgX-tUQ7kNvgE72iD0&_nc_zt=23&_nc_ht=scontent.ftun1-2.fna&_nc_gid=AWfDDFwKrvRUzsGQcNq5P-M&oh=00_AYBLYBbJClb_vxWIyIfZ4Y3WYfrhPQvxv2GHhjO-zcG0yg&oe=674778E6",
-  "https://scontent.ftun1-2.fna.fbcdn.net/v/t39.30808-6/467372663_9385998904763284_6882433361222578566_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=G5Y5hlgX-tUQ7kNvgE72iD0&_nc_zt=23&_nc_ht=scontent.ftun1-2.fna&_nc_gid=AWfDDFwKrvRUzsGQcNq5P-M&oh=00_AYBLYBbJClb_vxWIyIfZ4Y3WYfrhPQvxv2GHhjO-zcG0yg&oe=674778E6",
-  "https://scontent.ftun1-2.fna.fbcdn.net/v/t39.30808-6/467372663_9385998904763284_6882433361222578566_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=G5Y5hlgX-tUQ7kNvgE72iD0&_nc_zt=23&_nc_ht=scontent.ftun1-2.fna&_nc_gid=AWfDDFwKrvRUzsGQcNq5P-M&oh=00_AYBLYBbJClb_vxWIyIfZ4Y3WYfrhPQvxv2GHhjO-zcG0yg&oe=674778E6"
+  "https://i.ibb.co/wKYwXCG/467372663-9385998904763284-6882433361222578566-n.jpg",
+  "https://i.ibb.co/r61Z8Hq/467318428-18284965672243085-4179149581728295560-n.jpg",
+  "https://i.ibb.co/r0r05g9/467859190-18284965684243085-4639842183437437601-n.jpg"
 ];
 
 const ImageCarousel = () => {
@@ -31,16 +31,17 @@ const ImageCarousel = () => {
   return (
     <div className="relative w-full h-[500px] overflow-hidden rounded-3xl group">
       <AnimatePresence mode="wait">
-        <motion.img
-          key={currentIndex}
-          src={images[currentIndex]}
-          initial={{ opacity: 0, x: 100 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -100 }}
-          transition={{ duration: 0.5 }}
-          className="absolute inset-0 w-full h-full object-cover"
-          alt={`Coach image ${currentIndex + 1}`}
-        />
+      <motion.img
+  key={currentIndex}
+  src={images[currentIndex]}
+  initial={{ opacity: 0, x: 100 }}
+  animate={{ opacity: 1, x: 0 }}
+  exit={{ opacity: 0, x: -100 }}
+  transition={{ duration: 0.5 }}
+  className="absolute inset-0 w-full h-full object-contain"
+  alt={`Coach image ${currentIndex + 1}`}
+/>
+
       </AnimatePresence>
 
       <button

@@ -59,7 +59,7 @@ export default function ThankYou() {
                        hover:bg-[#ffed4a] transition-all duration-300 text-lg font-medium"
             >
               <House size={24} weight="fill" />
-              Retour à l'accueil
+              Retour
             </motion.button>
           </div>
         </motion.div>

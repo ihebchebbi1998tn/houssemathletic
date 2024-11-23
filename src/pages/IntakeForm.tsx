@@ -41,12 +41,12 @@ const genderOptions = [
   { 
     id: 'male', 
     title: 'Homme',
-    image: 'https://images.unsplash.com/photo-1583468982228-19f19164aee2?w=400&h=300&fit=crop'
+    image: 'https://i.ibb.co/4t8y6MP/shutterstock-316320002.jpg"'
   },
   { 
     id: 'female', 
     title: 'Femme',
-    image: 'https://images.unsplash.com/photo-1609899464926-c2692e49343e?w=400&h=300&fit=crop'
+    image: 'https://i.ibb.co/6gG0fGT/intro-programme-femme.jpg'
   }
 ];
 
@@ -55,7 +55,7 @@ const bodyTypes = [
     id: 'Mince',
     title: 'Mince',
     description: 'Poids inférieur à la normale',
-    image: 'https://images.unsplash.com/photo-1616803140344-7a9b0b66a886?w=400&h=300&fit=crop'
+    image: 'https://i.ibb.co/ckqy1ym/images.jpg'
   },
   {
     id: 'Normal',
@@ -67,21 +67,21 @@ const bodyTypes = [
     id: 'En surpoids',
     title: 'En surpoids',
     description: 'Poids supérieur à la normale',
-    image: 'https://images.unsplash.com/photo-1573879541250-4b5a6a7b21f7?w=400&h=300&fit=crop'
+    image: 'https://i.ibb.co/hgxDyKP/les-ballons-intragastriques-de-la-marque-allurion-sont-des-dispositifs-medicaux-utilises-chez-les-pe.jpg'
   },
   {
     id: 'bodybuilder',
     title: 'Bodybuilder',
     description: 'Déjà dans le monde du bodybuilding',
-    image: 'https://images.unsplash.com/photo-1577202214328-c04048e80467?w=1200&h=300&fit=crop',
+    image: 'https://i.ibb.co/L8BFwC2/20190829-182254-0830192018-Bodybuilde-00336.jpg',
     fullWidth: true
   }
 ];
 
 const availabilityOptions = [
-  { id: 'morning', title: 'Matin (6h-12h)' },
-  { id: 'afternoon', title: 'Après-midi (12h-18h)' },
-  { id: 'evening', title: 'Soir (18h-22h)' }
+  { id: 'morning', title: '6h-12h' },
+  { id: 'afternoon', title: '12h-18h' },
+  { id: 'evening', title: '18h-22h' }
 ];
 
 export default function IntakeForm() {
