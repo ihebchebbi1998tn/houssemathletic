@@ -31,7 +31,7 @@ const FloatingWhatsApp = () => {
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 1 }}
-        className="fixed bottom-10 right-6 z-50"
+        className="fixed bottom-10 right-4 z-50"
       >
         <AnimatePresence>
           {isOpen && (
