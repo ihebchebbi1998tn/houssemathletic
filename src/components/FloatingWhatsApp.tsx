@@ -39,7 +39,7 @@ const FloatingWhatsApp = () => {
               initial={{ opacity: 0, y: 20, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 20, scale: 0.95 }}
-              className="absolute bottom-16 right-10 mb-4 w-72 bg-white rounded-xl shadow-2xl overflow-hidden"
+              className="absolute bottom-16 right-10 mb-4 w-80 bg-white rounded-xl shadow-2xl overflow-hidden"
             >
               <div className="bg-green-600 p-4">
                 <div className="flex items-center gap-3">
