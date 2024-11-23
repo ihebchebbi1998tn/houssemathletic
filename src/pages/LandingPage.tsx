@@ -6,7 +6,7 @@ import ParticleBackground from '../components/ParticleBackground';
 import Gallery from '../components/Gallery';
 import ImageCarousel from '../components/ImageCarousel';
 import FloatingWhatsApp from '../components/FloatingWhatsApp';
-
+import WelcomePopup from '../components/WelcomePopup';
 export default function LandingPage() {
   const navigate = useNavigate();
 
@@ -14,7 +14,8 @@ export default function LandingPage() {
     <div className="relative min-h-screen overflow-x-hidden">
       <ParticleBackground />
       <FloatingWhatsApp />
-      
+      <WelcomePopup />
+
       <div className="relative z-10">
         <div className="container mx-auto px-4 py-8">
           <motion.nav 
@@ -170,6 +171,58 @@ export default function LandingPage() {
           </div>
         </div>
       </div>
+      <section className="relative z-10 py-20 bg-[#1a1a1a]/50">
+        <div className="container mx-auto px-4 text-center">
+          <motion.h2 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-3xl md:text-4xl font-bold text-white mb-8"
+          >
+            Prêt à Commencer?
+          </motion.h2>
+
+          <motion.p 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto"
+          >
+            Rejoignez notre programme et transformez votre vie dès aujourd'hui.
+          </motion.p>
+
+          <div className="flex flex-col md:flex-row gap-4 justify-center">
+            <motion.a
+              href="https://wa.me/21600000000"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+              className="inline-flex items-center justify-center gap-2 bg-green-600 text-white px-8 py-4 rounded-xl
+                       hover:bg-green-700 transition-all duration-300 text-lg font-medium"
+            >
+              <Phone className="w-6 h-6" />
+              Contactez-nous
+            </motion.a>
+
+            <motion.a
+              href="https://www.instagram.com/coach_houssem_jlassi/"
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.5 }}
+              className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white 
+                       px-8 py-4 rounded-xl hover:from-purple-700 hover:to-pink-700 transition-all duration-300 text-lg font-medium"
+            >
+              <Instagram className="w-6 h-6" />
+              Suivez-nous
+            </motion.a>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
