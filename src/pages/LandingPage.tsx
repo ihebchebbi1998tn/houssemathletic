@@ -1,12 +1,61 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ChevronRight, Instagram, Phone, Dumbbell, Target, Clock } from 'lucide-react';
+import { ChevronRight, Instagram, Phone, Dumbbell, Target, Clock, Check, ArrowRight } from 'lucide-react';
 import ParticleBackground from '../components/ParticleBackground';
 import Gallery from '../components/Gallery';
 import ImageCarousel from '../components/ImageCarousel';
 import FloatingWhatsApp from '../components/FloatingWhatsApp';
 import WelcomePopup from '../components/WelcomePopup';
+
+const PriceCard = ({ duration, priceEUR, priceTND }: { duration: string; priceEUR: string; priceTND: string }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    whileHover={{ y: -10 }}
+    className="bg-gradient-to-b from-[#242424]/80 to-[#1a1a1a]/80 backdrop-blur-lg p-8 rounded-2xl
+               border border-[#ffd700]/10 hover:border-[#ffd700]/30 transition-all duration-300
+               shadow-lg hover:shadow-xl"
+  >
+    <h3 className="text-2xl font-bold text-white mb-6">{duration}</h3>
+    <div className="space-y-4 mb-8">
+      <div className="flex items-center gap-2">
+        <div className="text-3xl font-bold text-[#ffd700]">{priceEUR}€</div>
+        <div className="text-gray-400">EUR</div>
+      </div>
+      <div className="flex items-center gap-2">
+        <div className="text-3xl font-bold text-[#ffd700]">{priceTND}</div>
+        <div className="text-gray-400">TND</div>
+      </div>
+    </div>
+    <ul className="space-y-3 mb-8">
+      <li className="flex items-center gap-2 text-gray-300">
+        <Check className="text-[#ffd700] w-5 h-5" />
+        Programme personnalisé
+      </li>
+      <li className="flex items-center gap-2 text-gray-300">
+        <Check className="text-[#ffd700] w-5 h-5" />
+        Suivi nutritionnel
+      </li>
+      <li className="flex items-center gap-2 text-gray-300">
+        <Check className="text-[#ffd700] w-5 h-5" />
+        Support WhatsApp
+      </li>
+    </ul>
+    <a
+      href="https://api.whatsapp.com/send/?phone=%2B21624683015&text=aa&type=phone_number&app_absent=0"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="block w-full text-center bg-[#ffd700] text-black px-6 py-3 rounded-xl
+                 hover:bg-[#ffed4a] transition-all duration-300 font-medium"
+    >
+      Réserver Maintenant
+    </a>
+  </motion.div>
+);
+
+
 export default function LandingPage() {
   const navigate = useNavigate();
 
@@ -116,6 +165,34 @@ export default function LandingPage() {
           </div>
         </div>
 
+           {/* Pricing Section */}
+        <section className="py-20 bg-black/30 backdrop-blur-lg">
+          <div className="container mx-auto px-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl font-bold text-white mb-6">
+                Mes <span className="text-[#ffd700]">Formules</span>
+              </h2>
+              <p className="text-gray-300 text-lg max-w-2xl mx-auto">
+                Pour réserver vos places et avoir plus de renseignements sur les offres et les modes de paiement,
+                il suffit juste d'envoyer un message sur whatsapp.
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <PriceCard duration="6 Semaines" priceEUR="150.00" priceTND="500.00" />
+              <PriceCard duration="12 Semaines" priceEUR="350.00" priceTND="1150.00" />
+              <PriceCard duration="6 Mois" priceEUR="550.00" priceTND="1800.00" />
+              <PriceCard duration="12 Mois" priceEUR="950.00" priceTND="3100.00" />
+            </div>
+          </div>
+        </section>
+
+        
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

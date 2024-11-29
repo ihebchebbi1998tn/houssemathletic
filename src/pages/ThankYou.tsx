@@ -1,11 +1,67 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { WhatsappLogo, House } from 'phosphor-react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import ParticleBackground from '../components/ParticleBackground';
 
 export default function ThankYou() {
   const navigate = useNavigate();
+  const location = useLocation();
+  const [redirecting, setRedirecting] = useState(false);
+  const formData = location.state?.formData;
+
+  useEffect(() => {
+    if (formData) {
+      const timer = setTimeout(() => {
+        setRedirecting(true);
+        const message = formatWhatsAppMessage(formData);
+        window.location.href = `https://api.whatsapp.com/send/?phone=%2B21624683015&text=${encodeURIComponent(message)}&type=phone_number&app_absent=0`;
+      }, 3000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [formData]);
+
+  const formatWhatsAppMessage = (data: any) => {
+    const availability = data.availability.map((time: string) => {
+      switch (time) {
+        case 'morning': return '6h-12h';
+        case 'afternoon': return '12h-18h';
+        case 'evening': return '18h-22h';
+        default: return time;
+      }
+    }).join(', ');
+
+    const objective = {
+      stronger: 'Devenir Plus Fort',
+      healthier: 'Mode de Vie Sain',
+      skinnier: 'Perte de Poids',
+      competition: 'Compétition'
+    }[data.objective] || data.objective;
+
+    return `🏋️‍♂️ *Nouvelle Inscription au Programme de Coaching* 🏋️‍♂️
+
+👤 *Informations Personnelles*
+- Nom: ${data.name}
+- Âge: ${data.age} ans
+- Genre: ${data.gender === 'male' ? 'Homme' : 'Femme'}
+
+📏 *Mensurations*
+- Taille: ${data.height} cm
+- Poids: ${data.weight} kg
+
+🎯 *Objectif*: ${objective}
+
+⏰ *Disponibilités*: ${availability}
+
+📍 *Localisation*: ${data.location}
+
+📞 *Contact*
+- Téléphone: ${data.phone}
+- Email: ${data.email}
+
+💪 Je souhaite commencer mon programme de coaching personnalisé !`;
+  };
 
   return (
     <div className="relative min-h-screen">
@@ -29,39 +85,19 @@ export default function ThankYou() {
           </motion.div>
 
           <h2 className="text-4xl font-bold mb-6 text-white">Merci pour votre inscription!</h2>
-          <p className="text-gray-300 text-lg mb-12 leading-relaxed">
-            Je vous contacterai personnellement très bientôt pour discuter de votre programme personnalisé.
-          </p>
+          
+          {redirecting ? (
+            <p className="text-gray-300 text-lg mb-12 leading-relaxed">
+              Redirection vers WhatsApp en cours...
+            </p>
+          ) : (
+            <p className="text-gray-300 text-lg mb-12 leading-relaxed">
+              Dans quelques secondes, vous serez redirigé vers WhatsApp pour finaliser votre inscription.
+              Je vous contacterai personnellement très bientôt pour discuter de votre programme personnalisé.
+            </p>
+          )}
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <motion.a
-              href="https://wa.me/21600000000"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.4 }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center justify-center gap-3 bg-green-600 text-white px-8 py-4 rounded-xl
-                       hover:bg-green-700 transition-all duration-300 text-lg font-medium"
-            >
-              <WhatsappLogo size={24} weight="fill" />
-              Me contacter sur WhatsApp
-            </motion.a>
-
-            <motion.button
-              onClick={() => navigate('/')}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5 }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center justify-center gap-3 bg-[#ffd700] text-black px-8 py-4 rounded-xl
-                       hover:bg-[#ffed4a] transition-all duration-300 text-lg font-medium"
-            >
-              <House size={24} weight="fill" />
-              Retour
-            </motion.button>
-          </div>
+         
         </motion.div>
       </div>
     </div>

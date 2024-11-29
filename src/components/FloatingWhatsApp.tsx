@@ -6,7 +6,7 @@ const FloatingWhatsApp = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [message, setMessage] = useState('');
   const [isAnimating, setIsAnimating] = useState(true);
-  const phoneNumber = "21600000000";
+  const phoneNumber = "+21624683015";
 
   useEffect(() => {
     const interval = setInterval(() => {
