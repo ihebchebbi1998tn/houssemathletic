@@ -1,0 +1,89 @@
+{
+  "nav": {
+    "language": "Langue",
+    "contact": {
+      "phone": "Téléphone",
+      "instagram": "Instagram"
+    }
+  },
+  "hero": {
+    "title": {
+      "transform": "Transformez",
+      "your": "Votre",
+      "body": "Corps",
+      "life": "Vie"
+    },
+    "subtitle": "Découvrez votre meilleure version avec des programmes personnalisés et un suivi professionnel.",
+    "cta": "Commencer Maintenant"
+  },
+  "videos": {
+    "title": "Découvrez Nos Vidéos",
+    "subtitle": "Explorez nos contenus exclusifs et découvrez nos méthodes d'entraînement",
+    "items": {
+      "training": "Programme d'entraînement",
+      "nutrition": "Nutrition et Récupération",
+      "transformations": "Transformations"
+    }
+  },
+  "pricing": {
+    "title": "Mes Formules",
+    "subtitle": "Choisissez le programme qui correspond le mieux à vos objectifs. Tous les prix incluent un suivi personnalisé et un accès illimité au support.",
+    "currency": {
+      "select": "Sélectionnez votre devise",
+      "TND": "Dinar Tunisien",
+      "EUR": "Euro",
+      "USD": "Dollar US"
+    },
+    "features": [
+      "Programme personnalisé",
+      "Suivi nutritionnel",
+      "Support WhatsApp 24/7",
+      "Accès aux vidéos exclusives",
+      "Suivi des progrès",
+      "Plan nutritionnel détaillé"
+    ],
+    "durations": {
+      "6weeks": "6 Semaines",
+      "12weeks": "12 Semaines",
+      "6months": "6 Mois",
+      "12months": "12 Mois"
+    },
+    "cta": "Réserver Maintenant"
+  },
+  "transformations": {
+    "title": "Transformations",
+    "subtitle": "Inspirantes",
+    "gallery": {
+      "transformation": "Transformation",
+      "equipment": "Équipement",
+      "workout": "Entraînement",
+      "results": "Résultats",
+      "gym": "Salle de sport",
+      "progress": "Progrès"
+    }
+  },
+  "features": {
+    "program": {
+      "title": "Programme Personnalisé",
+      "description": "Un plan d'entraînement adapté à vos objectifs et votre niveau"
+    },
+    "nutrition": {
+      "title": "Suivi Nutritionnel",
+      "description": "Des conseils nutritionnels pour optimiser vos résultats"
+    },
+    "support": {
+      "title": "Support Continu",
+      "description": "Un accès direct à votre coach pour un suivi régulier"
+    }
+  },
+  "cta": {
+    "title": "Prêt à Commencer Votre Transformation?",
+    "subtitle": "Rejoignez notre communauté et commencez votre voyage vers une meilleure version de vous-même."
+  },
+  "whatsapp": {
+    "greeting": "Bonjour! 👋 Comment puis-je vous aider aujourd'hui?",
+    "placeholder": "Écrivez votre message...",
+    "button": "Envoyer",
+    "notification": "1 nouveau message"
+  }
+}

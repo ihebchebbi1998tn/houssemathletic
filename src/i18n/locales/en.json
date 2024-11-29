@@ -1,0 +1,89 @@
+{
+  "nav": {
+    "language": "Language",
+    "contact": {
+      "phone": "Phone",
+      "instagram": "Instagram"
+    }
+  },
+  "hero": {
+    "title": {
+      "transform": "Transform",
+      "your": "Your",
+      "body": "Body",
+      "life": "Life"
+    },
+    "subtitle": "Discover your best version with personalized programs and professional guidance.",
+    "cta": "Start Now"
+  },
+  "videos": {
+    "title": "Discover Our Videos",
+    "subtitle": "Explore our exclusive content and discover our training methods",
+    "items": {
+      "training": "Training Program",
+      "nutrition": "Nutrition and Recovery",
+      "transformations": "Transformations"
+    }
+  },
+  "pricing": {
+    "title": "My Programs",
+    "subtitle": "Choose the program that best fits your goals. All prices include personalized coaching and unlimited support.",
+    "currency": {
+      "select": "Select your currency",
+      "TND": "Tunisian Dinar",
+      "EUR": "Euro",
+      "USD": "US Dollar"
+    },
+    "features": [
+      "Personalized program",
+      "Nutritional guidance",
+      "24/7 WhatsApp support",
+      "Access to exclusive videos",
+      "Progress tracking",
+      "Detailed nutrition plan"
+    ],
+    "durations": {
+      "6weeks": "6 Weeks",
+      "12weeks": "12 Weeks",
+      "6months": "6 Months",
+      "12months": "12 Months"
+    },
+    "cta": "Book Now"
+  },
+  "transformations": {
+    "title": "Inspiring",
+    "subtitle": "Transformations",
+    "gallery": {
+      "transformation": "Transformation",
+      "equipment": "Equipment",
+      "workout": "Workout",
+      "results": "Results",
+      "gym": "Gym",
+      "progress": "Progress"
+    }
+  },
+  "features": {
+    "program": {
+      "title": "Personalized Program",
+      "description": "A training plan adapted to your goals and level"
+    },
+    "nutrition": {
+      "title": "Nutritional Guidance",
+      "description": "Nutritional advice to optimize your results"
+    },
+    "support": {
+      "title": "Continuous Support",
+      "description": "Direct access to your coach for regular follow-up"
+    }
+  },
+  "cta": {
+    "title": "Ready to Start Your Transformation?",
+    "subtitle": "Join our community and begin your journey to a better version of yourself."
+  },
+  "whatsapp": {
+    "greeting": "Hello! 👋 How can I help you today?",
+    "placeholder": "Write your message...",
+    "button": "Send",
+    "notification": "1 new message"
+  }
+}

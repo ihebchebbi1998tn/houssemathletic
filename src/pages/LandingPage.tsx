@@ -1,63 +1,20 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ChevronRight, Instagram, Phone, Dumbbell, Target, Clock, Check, ArrowRight } from 'lucide-react';
+import { ChevronRight, Instagram, Phone } from 'lucide-react';
 import ParticleBackground from '../components/ParticleBackground';
 import Gallery from '../components/Gallery';
 import ImageCarousel from '../components/ImageCarousel';
 import FloatingWhatsApp from '../components/FloatingWhatsApp';
 import WelcomePopup from '../components/WelcomePopup';
-
-const PriceCard = ({ duration, priceEUR, priceTND }: { duration: string; priceEUR: string; priceTND: string }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    whileHover={{ y: -10 }}
-    className="bg-gradient-to-b from-[#242424]/80 to-[#1a1a1a]/80 backdrop-blur-lg p-8 rounded-2xl
-               border border-[#ffd700]/10 hover:border-[#ffd700]/30 transition-all duration-300
-               shadow-lg hover:shadow-xl"
-  >
-    <h3 className="text-2xl font-bold text-white mb-6">{duration}</h3>
-    <div className="space-y-4 mb-8">
-      <div className="flex items-center gap-2">
-        <div className="text-3xl font-bold text-[#ffd700]">{priceEUR}€</div>
-        <div className="text-gray-400">EUR</div>
-      </div>
-      <div className="flex items-center gap-2">
-        <div className="text-3xl font-bold text-[#ffd700]">{priceTND}</div>
-        <div className="text-gray-400">TND</div>
-      </div>
-    </div>
-    <ul className="space-y-3 mb-8">
-      <li className="flex items-center gap-2 text-gray-300">
-        <Check className="text-[#ffd700] w-5 h-5" />
-        Programme personnalisé
-      </li>
-      <li className="flex items-center gap-2 text-gray-300">
-        <Check className="text-[#ffd700] w-5 h-5" />
-        Suivi nutritionnel
-      </li>
-      <li className="flex items-center gap-2 text-gray-300">
-        <Check className="text-[#ffd700] w-5 h-5" />
-        Support WhatsApp
-      </li>
-    </ul>
-    <a
-      href="https://api.whatsapp.com/send/?phone=%2B21624683015&text=aa&type=phone_number&app_absent=0"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="block w-full text-center bg-[#ffd700] text-black px-6 py-3 rounded-xl
-                 hover:bg-[#ffed4a] transition-all duration-300 font-medium"
-    >
-      Réserver Maintenant
-    </a>
-  </motion.div>
-);
-
+import PricingSection from '../components/PricingSection';
+import VideoSection from '../components/VideoSection';
+import LanguageSelector from '../components/LanguageSelector';
+import { useTranslation } from 'react-i18next';
 
 export default function LandingPage() {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   return (
     <div className="relative min-h-screen overflow-x-hidden">
@@ -66,6 +23,7 @@ export default function LandingPage() {
       <WelcomePopup />
 
       <div className="relative z-10">
+        {/* Hero Section */}
         <div className="container mx-auto px-4 py-8">
           <motion.nav 
             initial={{ y: -20, opacity: 0 }}
@@ -79,7 +37,8 @@ export default function LandingPage() {
                 className="h-24 w-auto"
               />
             </div>
-            <div className="flex gap-6">
+            <div className="flex items-center gap-6">
+              <LanguageSelector />
               <motion.a 
                 href="https://instagram.com" 
                 className="text-white hover:text-[#ffd700] transition-colors"
@@ -116,9 +75,9 @@ export default function LandingPage() {
                 animate="visible"
                 transition={{ duration: 0.5, delay: 0.3 }}
               >
-                Transformez<br />
-                Votre <span className="text-[#ffd700]">Corps</span><br />
-                Votre <span className="text-[#ffd700]">Vie</span>
+                {t('hero.title.transform')}<br />
+                {t('hero.title.your')} <span className="text-[#ffd700]">{t('hero.title.body')}</span><br />
+                {t('hero.title.your')} <span className="text-[#ffd700]">{t('hero.title.life')}</span>
               </motion.h1>
               <motion.p 
                 className="text-gray-300 text-xl mb-12 leading-relaxed"
@@ -126,8 +85,7 @@ export default function LandingPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
               >
-                Découvrez votre meilleure version avec des programmes<br />
-                personnalisés et un suivi professionnel.
+                {t('hero.subtitle')}
               </motion.p>
               <motion.button
                 whileHover={{ scale: 1.05 }}
@@ -138,7 +96,7 @@ export default function LandingPage() {
                          transition-all duration-300 flex items-center gap-3 mx-auto lg:mx-0
                          transform hover:-translate-y-1"
               >
-                Commencer Maintenant
+                {t('hero.cta')}
                 <ChevronRight className="animate-bounce" />
               </motion.button>
             </motion.div>
@@ -165,34 +123,13 @@ export default function LandingPage() {
           </div>
         </div>
 
-           {/* Pricing Section */}
-        <section className="py-20 bg-black/30 backdrop-blur-lg">
-          <div className="container mx-auto px-4">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl font-bold text-white mb-6">
-                Mes <span className="text-[#ffd700]">Formules</span>
-              </h2>
-              <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-                Pour réserver vos places et avoir plus de renseignements sur les offres et les modes de paiement,
-                il suffit juste d'envoyer un message sur whatsapp.
-              </p>
-            </motion.div>
+        {/* Video Section */}
+        <VideoSection />
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <PriceCard duration="6 Semaines" priceEUR="150.00" priceTND="500.00" />
-              <PriceCard duration="12 Semaines" priceEUR="350.00" priceTND="1150.00" />
-              <PriceCard duration="6 Mois" priceEUR="550.00" priceTND="1800.00" />
-              <PriceCard duration="12 Mois" priceEUR="950.00" priceTND="3100.00" />
-            </div>
-          </div>
-        </section>
+        {/* Pricing Section */}
+        <PricingSection />
 
-        
+        {/* Transformations Section */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -201,105 +138,77 @@ export default function LandingPage() {
         >
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-bold text-center text-white mb-16">
-              Transformations <span className="text-[#ffd700]">Inspirantes</span>
+              {t('transformations.title')} <span className="text-[#ffd700]">Inspirantes</span>
             </h2>
             <Gallery />
           </div>
         </motion.div>
 
-        <div className="container mx-auto px-4 py-20">
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: <Dumbbell className="w-8 h-8" />,
-                title: "Programmes Sur Mesure",
-                description: "Adaptés à vos objectifs et votre mode de vie"
-              },
-              {
-                icon: <Target className="w-8 h-8" />,
-                title: "Objectifs Atteints",
-                description: "Une méthode éprouvée pour des résultats garantis"
-              },
-              {
-                icon: <Clock className="w-8 h-8" />,
-                title: "Suivi Constant",
-                description: "Un accompagnement personnalisé pour votre réussite"
-              }
-            ].map((feature, index) => (
-              <motion.div
-                key={index}
-                initial={{ y: 50, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.2 * index }}
-                whileHover={{ y: -10 }}
-                className="bg-gradient-to-b from-[#242424]/80 to-[#1a1a1a]/80 backdrop-blur-lg p-8 rounded-2xl
-                         border border-[#ffd700]/10 hover:border-[#ffd700]/30 transition-all duration-300
-                         shadow-lg hover:shadow-xl"
+        {/* Features Section */}
+        <section className="py-20 bg-black/40 backdrop-blur-lg">
+          <div className="container mx-auto px-4">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                {
+                  title: t('features.program.title'),
+                  description: t('features.program.description')
+                },
+                {
+                  title: t('features.nutrition.title'),
+                  description: t('features.nutrition.description')
+                },
+                {
+                  title: t('features.support.title'),
+                  description: t('features.support.description')
+                }
+              ].map((feature, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.2 }}
+                  className="bg-[#242424]/80 backdrop-blur-lg p-8 rounded-2xl border border-[#ffd700]/10"
+                >
+                  <h3 className="text-2xl font-bold text-white mb-4">{feature.title}</h3>
+                  <p className="text-gray-300">{feature.description}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Call to Action Section */}
+        <section className="relative py-20 bg-[#1a1a1a]/50">
+          <div className="container mx-auto px-4 text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="max-w-3xl mx-auto"
+            >
+              <h2 className="text-4xl font-bold text-white mb-8">
+                {t('cta.title')}
+              </h2>
+              <p className="text-gray-300 text-lg mb-12">
+                {t('cta.subtitle')}
+              </p>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => navigate('/inscription')}
+                className="bg-gradient-to-r from-[#ffd700] to-[#ffed4a] text-black px-12 py-6 
+                         rounded-full font-bold text-xl shadow-lg hover:shadow-xl 
+                         transition-all duration-300 flex items-center gap-3 mx-auto
+                         transform hover:-translate-y-1"
               >
-                <div className="w-16 h-16 bg-gradient-to-br from-[#ffd700]/20 to-[#ffd700]/10 
-                             rounded-xl flex items-center justify-center text-[#ffd700] mb-6
-                             transform rotate-3 hover:rotate-6 transition-transform duration-300">
-                  {feature.icon}
-                </div>
-                <h3 className="text-[#ffd700] text-xl font-bold mb-4">{feature.title}</h3>
-                <p className="text-gray-300">{feature.description}</p>
-              </motion.div>
-            ))}
+                {t('hero.cta')}
+                <ChevronRight className="animate-bounce" />
+              </motion.button>
+            </motion.div>
           </div>
-        </div>
+        </section>
       </div>
-      <section className="relative z-10 py-20 bg-[#1a1a1a]/50">
-        <div className="container mx-auto px-4 text-center">
-          <motion.h2 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-3xl md:text-4xl font-bold text-white mb-8"
-          >
-            Prêt à Commencer?
-          </motion.h2>
-
-          <motion.p 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto"
-          >
-            Rejoignez notre programme et transformez votre vie dès aujourd'hui.
-          </motion.p>
-
-          <div className="flex flex-col md:flex-row gap-4 justify-center">
-            <motion.a
-              href="https://wa.me/21600000000"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4 }}
-              className="inline-flex items-center justify-center gap-2 bg-green-600 text-white px-8 py-4 rounded-xl
-                       hover:bg-green-700 transition-all duration-300 text-lg font-medium"
-            >
-              <Phone className="w-6 h-6" />
-              Contactez-nous
-            </motion.a>
-
-            <motion.a
-              href="https://www.instagram.com/coach_houssem_jlassi/"
-              target="_blank"
-              rel="noopener noreferrer"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.5 }}
-              className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white 
-                       px-8 py-4 rounded-xl hover:from-purple-700 hover:to-pink-700 transition-all duration-300 text-lg font-medium"
-            >
-              <Instagram className="w-6 h-6" />
-              Suivez-nous
-            </motion.a>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }
