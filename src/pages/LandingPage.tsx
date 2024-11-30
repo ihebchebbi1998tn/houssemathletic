@@ -38,7 +38,6 @@ export default function LandingPage() {
               />
             </div>
             <div className="flex items-center gap-6">
-              <LanguageSelector />
               <motion.a 
                 href="https://instagram.com" 
                 className="text-white hover:text-[#ffd700] transition-colors"
@@ -55,6 +54,8 @@ export default function LandingPage() {
               >
                 <Phone size={24} />
               </motion.a>
+              <LanguageSelector />
+
             </div>
           </motion.nav>
 
