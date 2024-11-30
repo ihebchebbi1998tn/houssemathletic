@@ -8,8 +8,14 @@ const videos = [
   {
     id: 1,
     title: "videos.items.training",
-    thumbnail: "https://images.unsplash.com/photo-1594737625785-a6cbdabd333c?w=800&h=600&fit=crop",
-    url: "https://example.com/video1.mp4"
+    thumbnail: "https://i.ibb.co/hRzj9y9/image.png",
+    url:  "https://draminesaid.com/v1.mp4"
+  },
+  {
+    id: 2,
+    title: "form.objectives.competition",
+    thumbnail: "https://i.ibb.co/Lk6Jctf/image.png",
+    url:  "https://draminesaid.com/v2.mp4"
   }
 ];
 
