@@ -122,5 +122,25 @@
   },
   "footer": {
     "developer": "تم التطوير بواسطة"
+  },
+   "intakeform": {
+    "header": {
+      "title": "ابدأ تحولك",
+      "subtitle": "املأ هذا النموذج لتلقي برنامجك المخصص"
+    },
+    "personal": {
+      "title": "المعلومات الشخصية",
+      "namePlaceholder": "الاسم الكامل",
+      "agePlaceholder": "العمر",
+      "male": "ذكر",
+      "female": "أنثى",
+      "emailPlaceholder": "البريد الإلكتروني",
+      "phonePlaceholder": "الهاتف",
+      "locationPlaceholder": "المدينة"
+    }
+  },
+  "common": {
+    "next": "التالي",
+    "finish": "إنهاء"
   }
 }
