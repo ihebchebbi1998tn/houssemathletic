@@ -123,19 +123,57 @@
   "footer": {
     "developer": "Developed by"
   },
-   "intakeform": {
-    "header": {
-      "title": "Start Your Transformation",
-      "subtitle": "Fill out this form to receive your personalized program"
-    },
+  "intakeform": {
+    "title": "Intake Form",
+    "subtitle": "Please fill out the form",
+    "description": "Provide your personal information to proceed.",
     "personal": {
       "title": "Personal Information",
-      "namePlaceholder": "Full Name",
-      "agePlaceholder": "Age",
+      "name": "Name",
+      "age": "Age",
+      "email": "Email",
+      "phone": "Phone",
+      "location": "Location",
       "male": "Male",
-      "female": "Female",
-      "emailPlaceholder": "Email",
-      "phonePlaceholder": "Phone",
-      "locationPlaceholder": "City"
+      "female": "Female"
+    },
+    "measurements": {
+      "title": "Measurements",
+      "height": "Height (cm)",
+      "weight": "Weight (kg)"
+    },
+    "objective": {
+      "title": "Objective"
+    },
+    "availability": {
+      "title": "Availability",
+      "morning": "6am-12pm",
+      "afternoon": "12pm-6pm",
+      "evening": "6pm-10pm"
+    },
+    "next": "Next",
+    "back": "Back",
+    "finish": "Finish"
+  },
+  "objectives": {
+    "stronger": {
+      "title": "Get Stronger",
+      "description": "Improve your strength and endurance."
+    },
+    "healthier": {
+      "title": "Healthy Lifestyle",
+      "description": "Adopt a healthier lifestyle."
+    },
+    "skinnier": {
+      "title": "Weight Loss",
+      "description": "Achieve your weight loss goals."
+    },
+    "competition": {
+      "title": "Competition",
+      "description": "Prepare for competition."
     }
+  },
+  "transformations": {
+    "title": "My Transformations"
+  }
 }

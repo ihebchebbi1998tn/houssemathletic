@@ -14,7 +14,18 @@ export default function IntakeForm() {
   const navigate = useNavigate();
   const { t } = useTranslation();
   const [currentStep, setCurrentStep] = useState('personal');
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<{
+    name: string;
+    age: string;
+    gender: string;
+    email: string;
+    phone: string;
+    height: string;
+    weight: string;
+    objective: string;
+    location: string;
+    availability: string[];
+  }>({
     name: '',
     age: '',
     gender: '',
@@ -27,7 +38,7 @@ export default function IntakeForm() {
     availability: []
   });
 
-  const updateFormData = (data) => setFormData((prev) => ({ ...prev, ...data }));
+  const updateFormData = (data: Partial<typeof formData>) => setFormData((prev) => ({ ...prev, ...data }));
   const isStepValid = () => {
     switch (currentStep) {
       case 'personal':

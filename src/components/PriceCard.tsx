@@ -45,7 +45,7 @@ const PriceCard: React.FC<PriceCardProps> = ({ duration, priceTND, currency, fea
                  border border-[#ffd700]/10 hover:border-[#ffd700]/30 transition-all duration-300
                  shadow-lg hover:shadow-xl"
     >
-      <h3 className="text-2xl font-bold text-white mb-6">{t(`pricing.durations.${duration}`)}</h3>
+      <h3 className="text-2xl font-bold text-white mb-6">{t(`pricingSection.durations.${duration}`)}</h3>
       <div className="space-y-4 mb-8">
         <div className="flex items-baseline gap-2">
           <div className="text-4xl font-bold text-[#ffd700]">

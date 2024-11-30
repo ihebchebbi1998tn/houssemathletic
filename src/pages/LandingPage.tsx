@@ -138,7 +138,7 @@ export default function LandingPage() {
         >
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-bold text-center text-white mb-16">
-              {t('transformations.title')} <span className="text-[#ffd700]">Inspirantes</span>
+              {t('transformations.title')} <span className="text-[#ffd700]"></span>
             </h2>
             <Gallery />
           </div>

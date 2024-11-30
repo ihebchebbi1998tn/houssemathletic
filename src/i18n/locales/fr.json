@@ -137,10 +137,82 @@
       "emailPlaceholder": "البريد الإلكتروني",
       "phonePlaceholder": "الهاتف",
       "locationPlaceholder": "المدينة"
-    }
+    },
+    "title": "Formulaire d'inscription",
+    "subtitle": "Veuillez remplir le formulaire",
+    "description": "Fournissez vos informations personnelles pour continuer.",
+    "personal": {
+      "title": "Informations Personnelles",
+      "name": "Nom",
+      "age": "Âge",
+      "email": "E-mail",
+      "phone": "Téléphone",
+      "location": "Lieu",
+      "male": "Homme",
+      "female": "Femme"
+    },
+    "measurements": {
+      "title": "Mesures",
+      "height": "Taille (cm)",
+      "weight": "Poids (kg)"
+    },
+    "objective": {
+      "title": "Objectif"
+    },
+    "availability": {
+      "title": "Disponibilité",
+      "morning": "6h-12h",
+      "afternoon": "12h-18h",
+      "evening": "18h-22h"
+    },
+    "next": "Suivant",
+    "back": "Retour",
+    "finish": "Terminer"
   },
   "common": {
     "next": "التالي",
     "finish": "إنهاء"
+  },
+  "objectives": {
+    "stronger": {
+      "title": "Devenir plus fort",
+      "description": "Améliorez votre force et votre endurance."
+    },
+    "healthier": {
+      "title": "Mode de vie sain",
+      "description": "Adoptez un mode de vie plus sain."
+    },
+    "skinnier": {
+      "title": "Perte de poids",
+      "description": "Atteignez vos objectifs de perte de poids."
+    },
+    "competition": {
+      "title": "Compétition",
+      "description": "Préparez-vous pour la compétition."
+    }
+  },
+  "pricingSection": {
+    "title": "Mes Formules",
+    "subtitle": "Choisissez le programme qui correspond le mieux à vos objectifs. Tous les prix incluent un suivi personnalisé et un accès illimité au support.",
+    "currency": {
+      "TND": "TND",
+      "EUR": "EUR",
+      "USD": "USD"
+    },
+    "features": [
+      "Programme personnalisé",
+      "Suivi nutritionnel",
+      "Support WhatsApp",
+      "Accès aux vidéos exclusives"
+    ],
+    "durations": {
+      "6 Semaines": "6 Semaines",
+      "12 Semaines": "12 Semaines",
+      "6 Mois": "6 Mois",
+      "12 Mois": "12 Mois"
+    }
+  },
+  "transformations": {
+    "title": "Mes Transformations"
   }
 }

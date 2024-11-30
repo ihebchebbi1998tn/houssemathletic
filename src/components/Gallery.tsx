@@ -68,9 +68,6 @@ const Gallery = () => {
               alt={image.title}
               className="w-full h-64 object-cover transform transition-transform duration-500 group-hover:scale-110"
             />
-            <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-              <h3 className="text-white text-xl font-bold">{image.title}</h3>
-            </div>
           </motion.div>
         ))}
       </div>

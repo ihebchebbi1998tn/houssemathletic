@@ -137,10 +137,82 @@
       "emailPlaceholder": "البريد الإلكتروني",
       "phonePlaceholder": "الهاتف",
       "locationPlaceholder": "المدينة"
-    }
+    },
+    "title": "نموذج التسجيل",
+    "subtitle": "يرجى ملء النموذج",
+    "description": "قدم معلوماتك الشخصية للمتابعة.",
+    "personal": {
+      "title": "المعلومات الشخصية",
+      "name": "الاسم",
+      "age": "العمر",
+      "email": "البريد الإلكتروني",
+      "phone": "رقم الهاتف",
+      "location": "الموقع",
+      "male": "ذكر",
+      "female": "أنثى"
+    },
+    "measurements": {
+      "title": "القياسات",
+      "height": "الطول (سم)",
+      "weight": "الوزن (كغ)"
+    },
+    "objective": {
+      "title": "الهدف"
+    },
+    "availability": {
+      "title": "التوفر",
+      "morning": "6ص-12م",
+      "afternoon": "12م-6م",
+      "evening": "6م-10م"
+    },
+    "next": "التالي",
+    "back": "رجوع",
+    "finish": "إنهاء"
   },
   "common": {
     "next": "التالي",
     "finish": "إنهاء"
+  },
+  "objectives": {
+    "stronger": {
+      "title": "زيادة لقوة",
+      "description": "حسّن قوتك وقدرتك على التحمل."
+    },
+    "healthier": {
+      "title": "نمط حياة صحي",
+      "description": "اعتمد نمط حياة أكثر صحة."
+    },
+    "skinnier": {
+      "title": "فقدان الوزن",
+      "description": "حقق أهدافك في فقدان الوزن."
+    },
+    "competition": {
+      "title": "المنافسة",
+      "description": "استعد للمنافسة."
+    }
+  },
+  "pricingSection": {
+    "title": "خططي",
+    "subtitle": "اختر البرنامج الذي يناسب أهدافك. جميع الأسعار تشمل متابعة شخصية والوصول غير المحدود إلى الدعم.",
+    "currency": {
+      "TND": "دينار تونسي",
+      "EUR": "يورو",
+      "USD": "دولار أمريكي"
+    },
+    "features": [
+      "برنامج مخصص",
+      "متابعة غذائية",
+      "دعم عبر واتساب",
+      "الوصول إلى مقاطع الفيديو الحصرية"
+    ],
+    "durations": {
+      "6 Semaines": "6 أسابيع",
+      "12 Semaines": "12 أسبوعًا",
+      "6 Mois": "6 أشهر",
+      "12 Mois": "12 شهرًا"
+    }
+  },
+  "transformations": {
+    "title": "تحولاتي"
   }
 }

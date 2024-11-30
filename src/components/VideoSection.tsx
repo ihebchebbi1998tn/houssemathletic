@@ -10,18 +10,6 @@ const videos = [
     title: "videos.items.training",
     thumbnail: "https://images.unsplash.com/photo-1594737625785-a6cbdabd333c?w=800&h=600&fit=crop",
     url: "https://example.com/video1.mp4"
-  },
-  {
-    id: 2,
-    title: "videos.items.nutrition",
-    thumbnail: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&h=600&fit=crop",
-    url: "https://example.com/video2.mp4"
-  },
-  {
-    id: 3,
-    title: "videos.items.transformations",
-    thumbnail: "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=800&h=600&fit=crop",
-    url: "https://example.com/video3.mp4"
   }
 ];
 
