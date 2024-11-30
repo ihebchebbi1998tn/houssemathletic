@@ -175,5 +175,10 @@
   },
   "transformations": {
     "title": "My Transformations"
+  },
+  "whatsappPopup": {
+    "greeting": "Hello! 👋 How can I assist you today?",
+    "placeholder": "Write your message...",
+    "cta": "Send"
   }
 }
