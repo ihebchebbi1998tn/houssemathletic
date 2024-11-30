@@ -25,6 +25,11 @@
       "transformations": "Transformations"
     }
   },
+  "popup": {
+    "title": "Start Your 90-Day Challenge!",
+    "description": "Transform your body and life with a personalized program. Start today!",
+    "cta": "Start the Conversation"
+  },
   "pricing": {
     "title": "My Programs",
     "subtitle": "Choose the program that best fits your goals. All prices include personalized coaching and unlimited support.",
@@ -50,18 +55,6 @@
     },
     "cta": "Book Now"
   },
-  "transformations": {
-    "title": "Inspiring",
-    "subtitle": "Transformations",
-    "gallery": {
-      "transformation": "Transformation",
-      "equipment": "Equipment",
-      "workout": "Workout",
-      "results": "Results",
-      "gym": "Gym",
-      "progress": "Progress"
-    }
-  },
   "features": {
     "program": {
       "title": "Personalized Program",
@@ -80,10 +73,54 @@
     "title": "Ready to Start Your Transformation?",
     "subtitle": "Join our community and begin your journey to a better version of yourself."
   },
-  "whatsapp": {
-    "greeting": "Hello! 👋 How can I help you today?",
-    "placeholder": "Write your message...",
-    "button": "Send",
-    "notification": "1 new message"
+  "form": {
+    "title": "Start Your Transformation",
+    "subtitle": "Fill out this form to receive your personalized program",
+    "personal": {
+      "title": "Personal Information",
+      "name": "Full Name",
+      "age": "Age",
+      "email": "Email",
+      "phone": "Phone",
+      "location": "City"
+    },
+    "gender": {
+      "male": "Male",
+      "female": "Female"
+    },
+    "measurements": {
+      "title": "Your Measurements",
+      "height": "Height (cm)",
+      "weight": "Weight (kg)"
+    },
+    "objectives": {
+      "title": "Your Goal",
+      "stronger": "Get Stronger",
+      "healthier": "Healthy Lifestyle",
+      "skinnier": "Weight Loss",
+      "competition": "Competition"
+    },
+    "time": {
+      "title": "Your Availability",
+      "morning": "6am-12pm",
+      "afternoon": "12pm-6pm",
+      "evening": "6pm-10pm"
+    },
+    "buttons": {
+      "back": "Back",
+      "next": "Next",
+      "finish": "Finish"
+    },
+    "whatsapp": {
+      "message": "🏋️‍♂️ New Coaching Program Registration 🏋️‍♂️\n\n👤 Personal Information\n- Name: {{name}}\n- Age: {{age}} years\n- Gender: {{gender}}\n\n📏 Measurements\n- Height: {{height}} cm\n- Weight: {{weight}} kg\n\n🎯 Goal: {{objective}}\n\n⏰ Availability: {{availability}}\n\n📍 Location: {{location}}\n\n📞 Contact\n- Phone: {{phone}}\n- Email: {{email}}\n\n💪 I want to start my personalized coaching program!"
+    }
+  },
+  "thankyou": {
+    "title": "Thank you for registering!",
+    "message": "In a few seconds, you will be redirected to WhatsApp to complete your registration. I will personally contact you soon to discuss your personalized program.",
+    "redirecting": "Redirecting to WhatsApp..."
+  },
+  "footer": {
+    "developer": "Developed by"
   }
 }

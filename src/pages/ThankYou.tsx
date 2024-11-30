@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { WhatsappLogo, House } from 'phosphor-react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import ParticleBackground from '../components/ParticleBackground';
 
 export default function ThankYou() {
@@ -9,6 +10,7 @@ export default function ThankYou() {
   const location = useLocation();
   const [redirecting, setRedirecting] = useState(false);
   const formData = location.state?.formData;
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (formData) {
@@ -25,42 +27,32 @@ export default function ThankYou() {
   const formatWhatsAppMessage = (data: any) => {
     const availability = data.availability.map((time: string) => {
       switch (time) {
-        case 'morning': return '6h-12h';
-        case 'afternoon': return '12h-18h';
-        case 'evening': return '18h-22h';
+        case 'morning': return t('form.time.morning');
+        case 'afternoon': return t('form.time.afternoon');
+        case 'evening': return t('form.time.evening');
         default: return time;
       }
     }).join(', ');
 
     const objective = {
-      stronger: 'Devenir Plus Fort',
-      healthier: 'Mode de Vie Sain',
-      skinnier: 'Perte de Poids',
-      competition: 'Compétition'
+      stronger: t('form.objectives.stronger'),
+      healthier: t('form.objectives.healthier'),
+      skinnier: t('form.objectives.skinnier'),
+      competition: t('form.objectives.competition')
     }[data.objective] || data.objective;
 
-    return `🏋️‍♂️ *Nouvelle Inscription au Programme de Coaching* 🏋️‍♂️
-
-👤 *Informations Personnelles*
-- Nom: ${data.name}
-- Âge: ${data.age} ans
-- Genre: ${data.gender === 'male' ? 'Homme' : 'Femme'}
-
-📏 *Mensurations*
-- Taille: ${data.height} cm
-- Poids: ${data.weight} kg
-
-🎯 *Objectif*: ${objective}
-
-⏰ *Disponibilités*: ${availability}
-
-📍 *Localisation*: ${data.location}
-
-📞 *Contact*
-- Téléphone: ${data.phone}
-- Email: ${data.email}
-
-💪 Je souhaite commencer mon programme de coaching personnalisé !`;
+    return t('form.whatsapp.message', {
+      name: data.name,
+      age: data.age,
+      gender: data.gender === 'male' ? t('form.gender.male') : t('form.gender.female'),
+      height: data.height,
+      weight: data.weight,
+      objective: objective,
+      availability: availability,
+      location: data.location,
+      phone: data.phone,
+      email: data.email
+    });
   };
 
   return (
@@ -84,20 +76,17 @@ export default function ThankYou() {
             </svg>
           </motion.div>
 
-          <h2 className="text-4xl font-bold mb-6 text-white">Merci pour votre inscription!</h2>
+          <h2 className="text-4xl font-bold mb-6 text-white">{t('thankyou.title')}</h2>
           
           {redirecting ? (
             <p className="text-gray-300 text-lg mb-12 leading-relaxed">
-              Redirection vers WhatsApp en cours...
+              {t('thankyou.redirecting')}
             </p>
           ) : (
             <p className="text-gray-300 text-lg mb-12 leading-relaxed">
-              Dans quelques secondes, vous serez redirigé vers WhatsApp pour finaliser votre inscription.
-              Je vous contacterai personnellement très bientôt pour discuter de votre programme personnalisé.
+              {t('thankyou.message')}
             </p>
           )}
-
-         
         </motion.div>
       </div>
     </div>

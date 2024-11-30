@@ -28,11 +28,13 @@ const LanguageSelector = () => {
 
       <AnimatePresence>
         {isOpen && (
-          <>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="relative z-50"
+          >
+            <div
               className="fixed inset-0 z-40"
               onClick={() => setIsOpen(false)}
             />
@@ -64,7 +66,7 @@ const LanguageSelector = () => {
                 </motion.button>
               ))}
             </motion.div>
-          </>
+          </motion.div>
         )}
       </AnimatePresence>
     </div>

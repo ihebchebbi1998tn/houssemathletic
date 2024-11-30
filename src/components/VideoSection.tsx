@@ -1,31 +1,39 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Play, Pause } from 'lucide-react';
+import { Play, Pause, X } from 'lucide-react';
+import ReactPlayer from 'react-player';
+import { useTranslation } from 'react-i18next';
 
 const videos = [
   {
     id: 1,
-    title: "Programme d'entraînement",
+    title: "videos.items.training",
     thumbnail: "https://images.unsplash.com/photo-1594737625785-a6cbdabd333c?w=800&h=600&fit=crop",
-    url: "https://www.youtube.com/embed/your-video-id-1"
+    url: "https://example.com/video1.mp4"
   },
   {
     id: 2,
-    title: "Nutrition et Récupération",
+    title: "videos.items.nutrition",
     thumbnail: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&h=600&fit=crop",
-    url: "https://www.youtube.com/embed/your-video-id-2"
+    url: "https://example.com/video2.mp4"
   },
   {
     id: 3,
-    title: "Transformations",
+    title: "videos.items.transformations",
     thumbnail: "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=800&h=600&fit=crop",
-    url: "https://www.youtube.com/embed/your-video-id-3"
+    url: "https://example.com/video3.mp4"
   }
 ];
 
 const VideoSection = () => {
   const [selectedVideo, setSelectedVideo] = useState(videos[0]);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isFullscreen, setIsFullscreen] = useState(false);
+  const { t } = useTranslation();
+
+  const handleVideoEnd = () => {
+    setIsPlaying(false);
+  };
 
   return (
     <section className="py-20 bg-black/40 backdrop-blur-lg">
@@ -37,11 +45,8 @@ const VideoSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl font-bold text-white mb-6">
-            Découvrez Nos <span className="text-[#ffd700]">Vidéos</span>
+            {t('videos.title')} <span className="text-[#ffd700]">{t('videos.subtitle')}</span>
           </h2>
-          <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-            Explorez nos contenus exclusifs et découvrez nos méthodes d'entraînement
-          </p>
         </motion.div>
 
         <div className="grid lg:grid-cols-3 gap-8">
@@ -51,20 +56,24 @@ const VideoSection = () => {
               animate={{ opacity: 1, scale: 1 }}
               className="relative aspect-video rounded-2xl overflow-hidden bg-black/50"
             >
-              <iframe
-                src={`${selectedVideo.url}${isPlaying ? '?autoplay=1' : ''}`}
-                className="absolute inset-0 w-full h-full"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
-              {!isPlaying && (
+              {isPlaying ? (
+                <ReactPlayer
+                  url={selectedVideo.url}
+                  playing={isPlaying}
+                  controls
+                  width="100%"
+                  height="100%"
+                  onEnded={handleVideoEnd}
+                  className="absolute top-0 left-0"
+                />
+              ) : (
                 <div 
                   className="absolute inset-0 flex items-center justify-center cursor-pointer group"
                   onClick={() => setIsPlaying(true)}
                 >
                   <img
                     src={selectedVideo.thumbnail}
-                    alt={selectedVideo.title}
+                    alt={t(selectedVideo.title)}
                     className="absolute inset-0 w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors" />
@@ -100,7 +109,7 @@ const VideoSection = () => {
                   <div className="relative w-24 h-16 rounded-lg overflow-hidden">
                     <img
                       src={video.thumbnail}
-                      alt={video.title}
+                      alt={t(video.title)}
                       className="w-full h-full object-cover"
                     />
                     {selectedVideo.id !== video.id && (
@@ -110,7 +119,7 @@ const VideoSection = () => {
                     )}
                   </div>
                   <div>
-                    <h3 className="text-white font-medium">{video.title}</h3>
+                    <h3 className="text-white font-medium">{t(video.title)}</h3>
                   </div>
                 </div>
               </motion.div>
@@ -118,6 +127,25 @@ const VideoSection = () => {
           </div>
         </div>
       </div>
+
+      {isFullscreen && (
+        <div className="fixed inset-0 z-50 bg-black flex items-center justify-center">
+          <button
+            onClick={() => setIsFullscreen(false)}
+            className="absolute top-4 right-4 text-white hover:text-[#ffd700] transition-colors"
+          >
+            <X size={24} />
+          </button>
+          <ReactPlayer
+            url={selectedVideo.url}
+            playing={true}
+            controls
+            width="90vw"
+            height="90vh"
+            onEnded={handleVideoEnd}
+          />
+        </div>
+      )}
     </section>
   );
 };

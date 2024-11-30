@@ -25,6 +25,11 @@
       "transformations": "Transformations"
     }
   },
+  "popup": {
+    "title": "Démarrez votre Challenge 90 Jours!",
+    "description": "Transformez votre corps et votre vie avec un programme personnalisé. Commencez dès aujourd'hui!",
+    "cta": "Commencer la Discussion"
+  },
   "pricing": {
     "title": "Mes Formules",
     "subtitle": "Choisissez le programme qui correspond le mieux à vos objectifs. Tous les prix incluent un suivi personnalisé et un accès illimité au support.",
@@ -50,18 +55,6 @@
     },
     "cta": "Réserver Maintenant"
   },
-  "transformations": {
-    "title": "Transformations",
-    "subtitle": "Inspirantes",
-    "gallery": {
-      "transformation": "Transformation",
-      "equipment": "Équipement",
-      "workout": "Entraînement",
-      "results": "Résultats",
-      "gym": "Salle de sport",
-      "progress": "Progrès"
-    }
-  },
   "features": {
     "program": {
       "title": "Programme Personnalisé",
@@ -80,10 +73,54 @@
     "title": "Prêt à Commencer Votre Transformation?",
     "subtitle": "Rejoignez notre communauté et commencez votre voyage vers une meilleure version de vous-même."
   },
-  "whatsapp": {
-    "greeting": "Bonjour! 👋 Comment puis-je vous aider aujourd'hui?",
-    "placeholder": "Écrivez votre message...",
-    "button": "Envoyer",
-    "notification": "1 nouveau message"
+  "form": {
+    "title": "Commencez Votre Transformation",
+    "subtitle": "Remplissez ce formulaire pour recevoir votre programme personnalisé",
+    "personal": {
+      "title": "Informations Personnelles",
+      "name": "Nom Complet",
+      "age": "Âge",
+      "email": "Email",
+      "phone": "Téléphone",
+      "location": "Ville"
+    },
+    "gender": {
+      "male": "Homme",
+      "female": "Femme"
+    },
+    "measurements": {
+      "title": "Vos Mensurations",
+      "height": "Taille (cm)",
+      "weight": "Poids (kg)"
+    },
+    "objectives": {
+      "title": "Votre Objectif",
+      "stronger": "Devenir Plus Fort",
+      "healthier": "Mode de Vie Sain",
+      "skinnier": "Perte de Poids",
+      "competition": "Compétition"
+    },
+    "time": {
+      "title": "Vos Disponibilités",
+      "morning": "6h-12h",
+      "afternoon": "12h-18h",
+      "evening": "18h-22h"
+    },
+    "buttons": {
+      "back": "Retour",
+      "next": "Suivant",
+      "finish": "Terminer"
+    },
+    "whatsapp": {
+      "message": "🏋️‍♂️ Nouvelle Inscription au Programme de Coaching 🏋️‍♂️\n\n👤 Informations Personnelles\n- Nom: {{name}}\n- Âge: {{age}} ans\n- Genre: {{gender}}\n\n📏 Mensurations\n- Taille: {{height}} cm\n- Poids: {{weight}} kg\n\n🎯 Objectif: {{objective}}\n\n⏰ Disponibilités: {{availability}}\n\n📍 Localisation: {{location}}\n\n📞 Contact\n- Téléphone: {{phone}}\n- Email: {{email}}\n\n💪 Je souhaite commencer mon programme de coaching personnalisé !"
+    }
+  },
+  "thankyou": {
+    "title": "Merci pour votre inscription!",
+    "message": "Dans quelques secondes, vous serez redirigé vers WhatsApp pour finaliser votre inscription. Je vous contacterai personnellement très bientôt pour discuter de votre programme personnalisé.",
+    "redirecting": "Redirection vers WhatsApp en cours..."
+  },
+  "footer": {
+    "developer": "Développé par"
   }
 }

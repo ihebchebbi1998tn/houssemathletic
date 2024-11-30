@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, WhatsappLogo } from 'phosphor-react';
+import { useTranslation } from 'react-i18next';
 
 const WelcomePopup = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -52,12 +54,11 @@ const WelcomePopup = () => {
               </motion.div>
 
               <h2 className="text-2xl font-bold text-white mb-4">
-                Démarrez votre Challenge 90 Jours!
+                {t('popup.title')}
               </h2>
               
               <p className="text-gray-300 mb-8">
-                Transformez votre corps et votre vie avec un programme personnalisé. 
-                Commencez dès aujourd'hui!
+                {t('popup.description')}
               </p>
 
               <motion.a
@@ -68,7 +69,7 @@ const WelcomePopup = () => {
                          hover:bg-green-700 transition-all duration-300 text-lg font-medium w-full"
               >
                 <WhatsappLogo size={24} weight="fill" />
-                Commencer la Discussion
+                {t('popup.cta')}
               </motion.a>
             </div>
           </motion.div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Check } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 interface PriceCardProps {
   duration: string;
@@ -10,6 +11,8 @@ interface PriceCardProps {
 }
 
 const PriceCard: React.FC<PriceCardProps> = ({ duration, priceTND, currency, features }) => {
+  const { t } = useTranslation();
+  
   const getConvertedPrice = () => {
     switch (currency) {
       case 'EUR':
@@ -42,7 +45,7 @@ const PriceCard: React.FC<PriceCardProps> = ({ duration, priceTND, currency, fea
                  border border-[#ffd700]/10 hover:border-[#ffd700]/30 transition-all duration-300
                  shadow-lg hover:shadow-xl"
     >
-      <h3 className="text-2xl font-bold text-white mb-6">{duration}</h3>
+      <h3 className="text-2xl font-bold text-white mb-6">{t(`pricing.durations.${duration}`)}</h3>
       <div className="space-y-4 mb-8">
         <div className="flex items-baseline gap-2">
           <div className="text-4xl font-bold text-[#ffd700]">
@@ -55,7 +58,7 @@ const PriceCard: React.FC<PriceCardProps> = ({ duration, priceTND, currency, fea
         {features.map((feature, index) => (
           <li key={index} className="flex items-center gap-2 text-gray-300">
             <Check className="text-[#ffd700] w-5 h-5" />
-            {feature}
+            {t(`pricing.features.${index}`)}
           </li>
         ))}
       </ul>
@@ -66,7 +69,7 @@ const PriceCard: React.FC<PriceCardProps> = ({ duration, priceTND, currency, fea
         className="block w-full text-center bg-[#ffd700] text-black px-6 py-3 rounded-xl
                    hover:bg-[#ffed4a] transition-all duration-300 font-medium"
       >
-        Réserver Maintenant
+        {t('pricing.cta')}
       </a>
     </motion.div>
   );
