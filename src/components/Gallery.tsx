@@ -23,7 +23,7 @@ const images = [
     title: "Image 3"
   },
   {
-    src: "https://i.ibb.co/ws6XMxT/AR406752.jpg",
+    src: "https://i.ibb.co/LrPnVQH/a6feb2ca-2a30-4ed5-bdbb-78d313c64a1a.jpg",
     width: 800,
     height: 900,
     title: "AR406752"
