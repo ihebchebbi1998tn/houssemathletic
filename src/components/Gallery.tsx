@@ -5,40 +5,46 @@ import "yet-another-react-lightbox/styles.css";
 
 const images = [
   {
-    src: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&h=600&fit=crop",
+    src: "https://i.ibb.co/Zh4Tdrb/AR406799.jpg",
     width: 800,
     height: 600,
-    title: "Transformation"
+    title: "AR406799"
   },
   {
-    src: "https://images.unsplash.com/photo-1576678927484-cc907957088c?w=800&h=600&fit=crop",
+    src: "https://i.ibb.co/2tjDN9t/468152940-18470446702050161-4099700776036128294-n.jpg",
     width: 800,
     height: 600,
-    title: "Equipment"
+    title: "Image 1"
   },
   {
-    src: "https://images.unsplash.com/photo-1549060279-7e168fcee0c2?w=800&h=600&fit=crop",
+    src: "https://i.ibb.co/8BQmpVd/467318711-18284965693243085-4665614552950010621-n.jpg",
     width: 800,
     height: 600,
-    title: "Workout"
+    title: "Image 2"
   },
   {
-    src: "https://images.unsplash.com/photo-1597452485669-2c7bb5fef90d?w=800&h=600&fit=crop",
+    src: "https://i.ibb.co/1XFr8kt/467538818-18284965720243085-2225549853862629879-n.jpg",
     width: 800,
     height: 600,
-    title: "Results"
+    title: "Image 3"
   },
   {
-    src: "https://images.unsplash.com/photo-1605296867424-35fc25c9212a?w=800&h=600&fit=crop",
+    src: "https://i.ibb.co/ws6XMxT/AR406752.jpg",
     width: 800,
     height: 600,
-    title: "Gym"
+    title: "AR406752"
   },
   {
-    src: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=800&h=600&fit=crop",
+    src: "https://i.ibb.co/C86L86R/467178043-18284965738243085-6012870816686190413-n.jpg",
     width: 800,
     height: 600,
-    title: "Progress"
+    title: "Image 4"
+  },
+  {
+    src: "https://i.ibb.co/W3KgQm8/467117849-18284965756243085-7619141833982696844-n.jpg",
+    width: 800,
+    height: 600,
+    title: "Image 5"
   }
 ];
 
