@@ -122,5 +122,20 @@
   },
   "footer": {
     "developer": "Developed by"
-  }
+  },
+   "intakeform": {
+    "header": {
+      "title": "Start Your Transformation",
+      "subtitle": "Fill out this form to receive your personalized program"
+    },
+    "personal": {
+      "title": "Personal Information",
+      "namePlaceholder": "Full Name",
+      "agePlaceholder": "Age",
+      "male": "Male",
+      "female": "Female",
+      "emailPlaceholder": "Email",
+      "phonePlaceholder": "Phone",
+      "locationPlaceholder": "City"
+    }
 }
