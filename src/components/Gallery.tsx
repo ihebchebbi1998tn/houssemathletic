@@ -5,12 +5,6 @@ import "yet-another-react-lightbox/styles.css";
 
 const images = [
   {
-    src: "https://i.ibb.co/Zh4Tdrb/AR406799.jpg",
-    width: 800,
-    height: 600,
-    title: "AR406799"
-  },
-  {
     src: "https://i.ibb.co/2tjDN9t/468152940-18470446702050161-4099700776036128294-n.jpg",
     width: 800,
     height: 600,
