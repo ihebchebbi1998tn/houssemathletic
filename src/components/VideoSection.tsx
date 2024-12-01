@@ -16,6 +16,12 @@ const videos = [
     title: "form.objectives.competition",
     thumbnail: "https://i.ibb.co/Lk6Jctf/image.png",
     url:  "https://draminesaid.com/v2.mp4"
+  },
+   {
+    id: 3,
+    title: "form.objectives.competition",
+    thumbnail: "https://i.ibb.co/k6G5ZmB/image.png",
+    url:  "https://talelgym.tn/v3.mp4"
   }
 ];
 
