@@ -48,11 +48,12 @@
       "Plan nutritionnel détaillé"
     ],
     "durations": {
-      "6weeks": "6 Semaines",
-      "12weeks": "12 Semaines",
-      "6months": "6 Mois",
-      "12months": "12 Mois"
-    },
+  "1mois": "1 Mois",
+  "2mois": "2 Mois",
+  "3mois": "3 Mois",
+  "6mois": "6 Mois",
+  "12mois": "12 Mois"
+},
     "cta": "Réserver Maintenant"
   },
   "features": {

@@ -48,10 +48,11 @@
       "Detailed nutrition plan"
     ],
     "durations": {
-      "6weeks": "6 Weeks",
-      "12weeks": "12 Weeks",
-      "6months": "6 Months",
-      "12months": "12 Months"
+      "1mois": "1 Month",
+      "2mois": "2 Months",
+      "3mois": "3 Months",
+      "6mois": "6 Months",
+      "12mois": "12 Months"
     },
     "cta": "Book Now"
   },
