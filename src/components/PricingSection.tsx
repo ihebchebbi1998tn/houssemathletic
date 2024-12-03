@@ -37,10 +37,11 @@ const PricingSection = () => {
   const [selectedCurrency, setSelectedCurrency] = useState<Currency>('TND');
 
   const prices = [
-    { duration: '6 Semaines', priceTND: 250 },
-    { duration: '12 Semaines', priceTND: 450 },
-    { duration: '6 Mois', priceTND: 850 },
-    { duration: '12 Mois', priceTND: 1500 }
+    { duration: '1 mois', priceTND: 150 },
+    { duration: '2 mois', priceTND: 250 },
+    { duration: '3 mois', priceTND: 350 },
+    { duration: '6 mois', priceTND: 650 },
+    { duration: '12 mois', priceTND: 950 }
   ];
 
   return (
