@@ -62,7 +62,7 @@ const WelcomePopup = () => {
               </p>
 
               <motion.a
-                href="https://wa.me/21600000000"
+                href="https://wa.me/21624683015"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="inline-flex items-center justify-center gap-2 bg-green-600 text-white px-8 py-4 rounded-xl
